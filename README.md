@@ -29,6 +29,10 @@ The messy raw dataset and the finalized cleaned dataset are both available in th
 </p>
 <p align="center"><em>Demo Data Analysis</em></p>
 
+### Tools used
+- Jupyter Notebook: create python code that can be ran in chunks
+- Github Desktop: easy GitHub access and control
+
 
 
 ### Libraries used
