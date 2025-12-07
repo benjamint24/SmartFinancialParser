@@ -6,7 +6,7 @@ Welcome! This project is a data pipeline that generates, cleans, and analyzes fi
 - Clone this resposity to wherever you want
 - Navigate to where the project is cloned to in your terminal
 - From the project root directory: cd Source Code
-- In the Source Code foler: python pipeline.py
+- In the Source Code folder: python pipeline.py
 
 You will be guided through:
 1. Data Creation – generates synthetic transactions with user-entered amount of rows
@@ -29,6 +29,10 @@ The messy raw dataset and the finalized cleaned dataset are both available in th
 </p>
 <p align="center"><em>Demo Data Analysis</em></p>
 
+### Tools used
+- Jupyter Notebook: create python code that can be ran in chunks
+- Github Desktop: easy GitHub access and control
+
 
 
 ### Libraries used
@@ -44,10 +48,10 @@ The messy raw dataset and the finalized cleaned dataset are both available in th
 ## Code Structure
 
 There are 4 main files: 
-datacreation - creates messy data and saves it to a csv
-datacleaning - cleans messy data from messy dataset and creates clean dataset
-dataanalysis - does basic eda on clean dataset
-pipeline - puts the first three into a cli demonstration
+- datacreation - creates messy data and saves it to a csv  
+- datacleaning - cleans messy data from messy dataset and creates clean dataset  
+- dataanalysis - does basic eda on clean dataset  
+- pipeline - puts the first three into a cli demonstration  
 
 ### Data Creation
 
@@ -75,7 +79,7 @@ This first file intentionally messy transactions CSV. It uses helper functions f
 - `maybe_add_prefix_suffix(s: str) -> str`  
   Randomly prepends or appends tokens like `PAYPAL*`, `SQ*`, `ACH`, `.COM`, `INC`, `(ONLINE)` to simulate statement-style noise with a chance
 - `maybe_add_typos(s: str) -> str`  
-  WIntroduces a typo via character deletion or replacement in sufficiently long strings with a chance
+  Introduces a typo via character deletion or replacement in sufficiently long strings with a chance
 - `maybe_add_regex_noise(s: str) -> str`  
   Injects special character sequences or tags (e.g., `.*`, `[TRIP]`, `(EATS)`, `.*UBR`) at the beginning or end of the merchant string with a chance
 - `random_merchant() -> str`  
@@ -100,7 +104,7 @@ This first file intentionally messy transactions CSV. It uses helper functions f
   - Generates a noisy amount via `format_amount_mixed`  
   Finally, it writes all rows and prints a summary message with the number of generated rows.
 
-**Interactive Wrapper (the one used in the demo**
+**Interactive Wrapper (the one used in the demo)**
 - `creation_demo() -> bool`  
   CLI-style wrapper that:
   - Prompts the user for the desired number of rows  
@@ -284,16 +288,16 @@ SmartFinancialParser/
 
 ## Creative Thinking Process + Challenges
 
-With a more data science/analysis background, this option seemed like the best way for me to show my skills in data handling while working on and learning SWE principles and creating a clean project that can be cloned and used. My biggest tool was ChatGPT, as it helped me create templates for my code and READme, as well as provide suggestions for what to do. I had originally planned to import data, import fancy libraries to handle and clean the dataset, and then do extenside EDA on it becuase that's what I've done in the past on my Data Analysis projects. However, I needed to practice on what I knew about algorithms and create a parallel cleaning/creating process for this project to get myself outside my comfort zone. AI suggested me to use edit distance which I had just learned in my algorithms class to catch spelling errors, which was a part I spent a lot of time thinking about. The creation wasn't super hard to do, but the cleaning was difficult because I had to account for the first 16 merchants mapping to the name while the last 3 mapped to a category. ChatGPT helped me with suggestions on how to handle my cleaning process and eventually my pipeline, but in the end, I had to be the one to debug my code. Another challenge I had was that I was working on this project in Jupyter Notebook, and importing my three main files needed to by .py files and not .ipynb files. I worked through the terminal to convert my files every time I made edits. The pipeline had additional problems due to it running extra code from the three files that wasnt in the demo function. I spent a lot of time understanding the logic of the main fucntion and how to work with updating my code accordingly. In the end, I think I learned a lot, but still have much more to work on in the organization and robust-ness of my code.
+With a more data science/analysis background, this option seemed like the best way for me to show my skills in data handling while working on and learning SWE principles and creating a clean project that can be cloned and used. My biggest tool was ChatGPT, as it helped me create templates for my code and READme, as well as provide suggestions for what to do. I had originally planned to import data, import fancy libraries to handle and clean the dataset, and then do extenside EDA on it becuase that's what I've done in the past on my Data Analysis projects. However, I needed to practice on what I knew about algorithms and create a parallel cleaning/creating process for this project to get myself outside my comfort zone. Edit distance, which I had just learned in my algorithms class to return the smallest edits to catch spelling errors in the main cleaner, which was a part I spent a lot of time thinking about. The creation wasn't super hard to do, but the cleaning was difficult because I had to account for the first 16 merchants mapping to the name while the last 3 mapped to a category. ChatGPT helped me with suggestions on how to handle my cleaning process and eventually my pipeline, but in the end, I had to be the one to debug my code. Another challenge I had was that I was working on this project in Jupyter Notebook, and importing my three main files needed to by .py files and not .ipynb files. I worked through the terminal to convert my files every time I made edits. The pipeline had additional problems due to it running extra code from the three files that wasnt in the demo function. I spent a lot of time understanding the logic of the main fucntion and how to work with updating my code accordingly. In the end, I think I learned a lot, but still have much more to work on in the organization and robust-ness of my code.
 
 ## Future Improvements
 - Use NLP (natural language processing) so that I'm not limited to a dictionary of merchants to generate and clean, can also be used to fix heavier typos
 - Have funcitonality in my CLI to navigate through the messy and clean datasets (show row x to row y)
 - Have multiple types of currencies and normalize it to one type
-- Have Visual EDA in the CLI with bar graphs (I tried this but wasn't successful)
+- Have Visual EDA in the CLI with bar graphs 
 - Track performance metrics (how long it took to clean/create dataset)
-- Have a configuration file instead of hard-coding it as a global varaible
-- Implement SWE principles (Database to store all datasets, nice front end instead of CLI)
+- Have a configuration file instead of hard-coding it as a global variable
+- Implement SWE principles (Database to store all datasets, nice front end instead of CLI, etc.)
 
 
 ## Author
