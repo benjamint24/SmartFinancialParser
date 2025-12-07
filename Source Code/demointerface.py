@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
-import time
 import datacreation
 import datacleaning
 import dataanalysis
@@ -17,19 +16,17 @@ def main():
         print("==============================\n")
 
         # 1) CREATE
-        if datacreation.creation_demo() is False:
+        if datacreation.creation_demo() == False:
             break
 
         # 2) CLEAN
-        if datacleaning.cleaning_demo() is False:
+        if datacleaning.cleaning_demo() == False:
             break
-
-        time.sleep(3)
 
         # 3) ANALYZE
         dataanalysis.analysis_demo()
 
-        # REPEAT
+        # REPEAT?
         print("\nRun the entire pipeline again with new data? (y/n)")
         choice = input(">> ").strip().lower()
 

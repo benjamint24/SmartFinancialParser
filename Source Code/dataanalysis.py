@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[140]:
 
 
 # EDA libraries 
@@ -13,14 +13,14 @@ import seaborn as sns
 df = pd.read_csv('../datasets/synthetic_transactions_clean.csv')
 
 # Quick sanity checks for dataframe
-print("Shape:", df.shape)
-print("\nColumns:\n", df.columns.tolist())
+#print("Shape:", df.shape)
+#print("\nColumns:\n", df.columns.tolist())
 
 # Show first 5 rows
 df.head()
 
 
-# In[26]:
+# In[141]:
 
 
 # grouping by merchants to find top 5 merchants by average amount spent
@@ -34,7 +34,7 @@ merchant_avg = (
 merchant_avg.head()
 
 
-# In[28]:
+# In[142]:
 
 
 plt.figure(figsize=(14, 6))
@@ -53,7 +53,7 @@ plt.title("Total Transaction Amount by Merchant")
 
 # Top Spender on average is LOWE'S
 
-# In[30]:
+# In[144]:
 
 
 # same thing but group by total
@@ -69,7 +69,7 @@ merchant_total.head()
 
 # Top Spender in total is Instacart
 
-# In[32]:
+# In[147]:
 
 
 plt.figure(figsize=(14, 6))
@@ -86,7 +86,7 @@ plt.ylabel("Total Transaction Amount")
 plt.title("Total Transaction Amount by Merchant")
 
 
-# In[80]:
+# In[158]:
 
 
 CLEAN_FILE = "../datasets/synthetic_transactions_clean.csv"
@@ -126,51 +126,41 @@ def analysis_demo():
         .sort_values(by="amount", ascending=False)
     )
 
+    top_avg = merchant_avg.iloc[0]
+    top_total = merchant_total.iloc[0]
+
+    print("\nMost expensive merchant on average: ")
+    print(top_avg["merchant"])
+
+    print("Most expensive merchant in total: ")
+    print(top_total["merchant"])
+
     print("\n--- Top 5 Merchants by AVERAGE Amount ---")
     print(merchant_avg.head(5))
 
     print("\n--- Top 5 Merchants by TOTAL Amount ---")
     print(merchant_total.head(5))
 
-    # Optional: quick plots
-    choice = input("\nShow quick amount / merchant plots? (y/n): ").strip().lower()
-
-    if choice == "y":
-        plt.figure(figsize=(14, 6))
-
-        sns.barplot(
-            data=merchant_avg,
-            x="merchant",
-            y="amount"
-        )
-        
-        plt.xticks(rotation=45, ha="right")
-        plt.xlabel("Merchant")
-        plt.ylabel("Total Transaction Amount")
-        plt.title("Total Transaction Amount by Merchant")
-
-        plt.figure(figsize=(14, 6))
-
-        sns.barplot(
-            data=merchant_total,
-            x="merchant",
-            y="amount"
-        )
-        
-        plt.xticks(rotation=45, ha="right")
-        plt.xlabel("Merchant")
-        plt.ylabel("Total Transaction Amount")
-        plt.title("Total Transaction Amount by Merchant")
-    else:
-        print("Skipping plots.")
-
     print("\nAnalysis complete.\n")
 
 
-# In[82]:
+# In[160]:
 
 
-analysis_demo()
+if __name__ == "__main__":
+    analysis_demo()
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:

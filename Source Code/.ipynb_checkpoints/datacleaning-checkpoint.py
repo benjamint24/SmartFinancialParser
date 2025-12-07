@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[268]:
+# In[266]:
 
 
 import csv
@@ -67,16 +67,16 @@ DATE_PATTERNS = [
 ]
  
 #regex using re that takes care of all MMM DD+suffix YY formats 
-#HAS to have (in order)
-       # -starting (^) with three alphabetic characters mixed case allowed : (?P<mon>[A-Za-z]{3})
-       # -1 more more spaces : \s+
-       # -date with one or two digits: (?P<day>\d{1,2})
-       # -required suffix right after
-       # : (st|nd|rd|th)
-       #-1 more more spaces : \s+
-       # -year with 2 digits : (?P<year>\d{2})
-       # -NOTHING after: $
-'''
+''' HAS to have (in order)
+        -starting (^) with three alphabetic characters mixed case allowed : (?P<mon>[A-Za-z]{3})
+        -1 more more spaces : "\s+"
+        -date with one or two digits: (?P<day>\d{1,2})
+        -required suffix right after
+        : (st|nd|rd|th)
+        -1 more more spaces : "\s+"
+        -year with 2 digits : (?P<year>\d{2})
+        -NOTHING after: $
+
     Example cases:
         Jan 1st 21
         Oct 23rd 19
