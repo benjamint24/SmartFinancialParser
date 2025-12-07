@@ -24,6 +24,7 @@ def main():
         if datacleaning.cleaning_demo() is False:
             break
 
+        #delay to give user time to see clean before analysis
         time.sleep(3)
 
         # 3) ANALYZE

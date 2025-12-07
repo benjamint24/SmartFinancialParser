@@ -6,8 +6,8 @@
 
 # EDA libraries 
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 
 
 df = pd.read_csv('../datasets/synthetic_transactions_clean.csv')

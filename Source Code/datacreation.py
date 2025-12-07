@@ -8,7 +8,6 @@ import csv
 import random
 from datetime import date, timedelta 
 
-
 # global variables (rows, start/end date, output path)
 
 START_DATE = date(2019, 1, 1)
