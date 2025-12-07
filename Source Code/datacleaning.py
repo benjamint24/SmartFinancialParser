@@ -7,6 +7,7 @@
 import csv
 import re
 from datetime import datetime
+from typing import List, Dict, Optional
 
 # input/output files
 INPUT_FILE = "../datasets/synthetic_transactions.csv"

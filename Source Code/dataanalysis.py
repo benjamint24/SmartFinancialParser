@@ -6,7 +6,7 @@
 
 # EDA libraries 
 import pandas as pd
-# import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 # import seaborn as sns
 
 
@@ -37,6 +37,7 @@ merchant_avg.head()
 # In[142]:
 
 
+'''
 plt.figure(figsize=(14, 6))
 
 sns.barplot(
@@ -49,6 +50,7 @@ plt.xticks(rotation=45, ha="right")
 plt.xlabel("Merchant")
 plt.ylabel("Total Transaction Amount")
 plt.title("Total Transaction Amount by Merchant")
+'''
 
 
 # Top Spender on average is LOWE'S
@@ -72,6 +74,7 @@ merchant_total.head()
 # In[147]:
 
 
+'''
 plt.figure(figsize=(14, 6))
 
 sns.barplot(
@@ -84,6 +87,7 @@ plt.xticks(rotation=45, ha="right")
 plt.xlabel("Merchant")
 plt.ylabel("Total Transaction Amount")
 plt.title("Total Transaction Amount by Merchant")
+'''
 
 
 # In[158]:
