@@ -4,6 +4,7 @@ Welcome! This project is a data pipeline that generates, cleans, and analyzes fi
 
 ## How to Run the Project (Terminal)
 - Clone this resposity to wherever you want
+- Have pandas installed using `pip install pandas` in terminal
 - Navigate to where the project is cloned to in your terminal
 - From the project root directory: cd Source Code
 - In the Source Code folder: python pipeline.py
@@ -42,6 +43,7 @@ The messy raw dataset and the finalized cleaned dataset are both available in th
 - RE: for regular expression (regex) handling
 - Datetime: for date formatting and additional functions (e.g. timedelta)
 - Random: to introduce randomness in data creation
+- typing: labels what types your variables and function returns should have, prevents silent errors/bugs
 - Matplotlib & Seaborn: data anlysis tools not used in the pipeline but for own exploration
 
 
@@ -298,6 +300,7 @@ With a more data science/analysis background, this option seemed like the best w
 - Track performance metrics (how long it took to clean/create dataset)
 - Have a configuration file instead of hard-coding it as a global variable
 - Implement SWE principles (Database to store all datasets, nice front end instead of CLI, etc.)
+- More robust CLI with user input error handling
 
 
 ## Author
